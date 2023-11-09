@@ -5,11 +5,7 @@ import EmployeeModel from "../4-models/employee-model";
 import TaskModel from "../4-models/task-model";
 import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 
-async function getAllEmployees():Promise<EmployeeModel[]>{
-    const sql=`SELECT * FROM employees`
-    const employees=await dal.execute(sql)
-    return employees
-}
+
 
 async function getAllCustomers():Promise<CustomerModel[]>{
     const sql=`SELECT * FROM customers`
@@ -79,19 +75,27 @@ async function updateTask(task:TaskModel):Promise<TaskModel> {
     if (info.affectedRows===0) throw new ResourceNotFoundErrorModel(task.taskId)
   
 
-    return task
-    
+    return task    
+}
+
+async function deleteTask(TaskId:number):Promise<void>{
+    const sql=`
+    DELETE FROM tasks
+    WHERE taskId=?
+    `
+    const info:OkPacket=await dal.execute(sql,[TaskId])
+    if(info.affectedRows===0) throw new ResourceNotFoundErrorModel(TaskId)
+
 }
 
 
 export default {
     
-    getAllEmployees,
     getAllCustomers,
     getAllTasks,
     getAllTasksByEmployeeName,
     getAllTasksByCustomerName,
     addTask,
-    updateTask
-
+    updateTask,
+    deleteTask
 };

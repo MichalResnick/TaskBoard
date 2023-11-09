@@ -2,19 +2,12 @@ import express, { Request, Response, NextFunction } from "express";
 import logic from "../5-logic/task-logic";
 import taskLogic from "../5-logic/task-logic";
 import TaskModel from "../4-models/task-model";
+import employeesLogic from "../5-logic/employees-logic";
 
 const router = express.Router(); // Capital R
 
 // GET http://localhost:3001/api/_____
-router.get("/tasks/employees", async (request: Request, response: Response, next: NextFunction) => {
-    try {
-        const employees=await taskLogic.getAllEmployees()
-        response.json(employees)
-    }
-    catch (err: any) {
-        next(err);
-    }
-});
+
 
 router.get("/tasks/customers", async (request: Request, response: Response, next: NextFunction) => {
     try {
@@ -79,6 +72,18 @@ router.put("/tasks/:taskId", async (request: Request, response: Response, next: 
     const task=new TaskModel(request.body)
     const updatedTask=await taskLogic.updateTask(task)
     response.status(201).json(updatedTask)
+    
+    }
+    catch (err: any) {
+        next(err);
+    }
+});
+
+router.delete("/tasks/:taskId", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+    const taskId=+request.params.taskId
+    await taskLogic.deleteTask(taskId)
+    response.sendStatus(204)
     
     }
     catch (err: any) {
