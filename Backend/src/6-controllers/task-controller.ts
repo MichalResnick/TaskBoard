@@ -38,13 +38,28 @@ router.get("/tasks-by-employee/:employeeId", async (request: Request, response: 
     try {
        const employeeId=+request.params.employeeId
        console.log(employeeId+"id")
-       const tasks=await taskLogic.getAllTasksByEmployeeName(employeeId)
-       response.json(tasks)
+       const tasksByEmployee=await taskLogic.getAllTasksByEmployeeName(employeeId)
+       response.json(tasksByEmployee)
 
     }
     catch (err: any) {
         next(err);
     }
 });
+
+router.get("/tasks-by-customer/:customerId", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+       const customerId=+request.params.customerId
+       console.log(customerId+"customerId")
+       const tasksByCustomer=await taskLogic.getAllTasksByEmployeeName(customerId)
+       response.json(tasksByCustomer)
+
+    }
+    catch (err: any) {
+        next(err);
+    }
+});
+
+
 
 export default router;
