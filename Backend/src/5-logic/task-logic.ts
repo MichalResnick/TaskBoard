@@ -51,17 +51,10 @@ async function getAllTasksByCustomerName(customerId:number):Promise<TaskModel[]>
 
 async function addTask(task:TaskModel):Promise<TaskModel> {
     const sql=`
-    INSERT INTO meetings VALUES(
-        DEFAULT,
-        ?,
-        ?,
-        ?,
-        ?,
-        ?
-    )`
+    INSERT INTO tasks(item,customerId,status,date,priority,employeeId)  VALUES (?, ?, ?, ?, ?, ?) `
     
     const values=[task.item,task.customerId,task.status,task.date,task.priority,task.employeeId]
-    const info:OkPacket=await dal.execute(sql,[values])
+    const info:OkPacket=await dal.execute(sql,values)
 
     task.taskId=info.insertId
 

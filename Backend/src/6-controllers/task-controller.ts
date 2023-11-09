@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import logic from "../5-logic/task-logic";
 import taskLogic from "../5-logic/task-logic";
+import TaskModel from "../4-models/task-model";
 
 const router = express.Router(); // Capital R
 
@@ -54,6 +55,18 @@ router.get("/tasks-by-customer/:customerId", async (request: Request, response: 
        const tasksByCustomer=await taskLogic.getAllTasksByEmployeeName(customerId)
        response.json(tasksByCustomer)
 
+    }
+    catch (err: any) {
+        next(err);
+    }
+});
+
+router.post("/tasks", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+    const task=new TaskModel(request.body)
+    const addedTask=await taskLogic.addTask(task)
+    response.status(201).json(addedTask)
+    
     }
     catch (err: any) {
         next(err);
