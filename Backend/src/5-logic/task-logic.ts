@@ -3,6 +3,7 @@ import dal from "../2-utils/dal";
 import CustomerModel from "../4-models/customer-model";
 import EmployeeModel from "../4-models/employee-model";
 import TaskModel from "../4-models/task-model";
+import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 
 async function getAllEmployees():Promise<EmployeeModel[]>{
     const sql=`SELECT * FROM employees`
@@ -62,6 +63,26 @@ async function addTask(task:TaskModel):Promise<TaskModel> {
     
 }
 
+async function updateTask(task:TaskModel):Promise<TaskModel> {
+    const sql=`
+   UPDATE tasks SET 
+   item=?,
+   customerId=?,
+   status=?,
+   date=?,
+   priority=?,
+   employeeId=?
+   WHERE taskId=? `
+    
+    const values=[task.item,task.customerId,task.status,task.date,task.priority,task.employeeId, task.taskId]
+    const info:OkPacket=await dal.execute(sql,values)
+    if (info.affectedRows===0) throw new ResourceNotFoundErrorModel(task.taskId)
+  
+
+    return task
+    
+}
+
 
 export default {
     
@@ -70,6 +91,7 @@ export default {
     getAllTasks,
     getAllTasksByEmployeeName,
     getAllTasksByCustomerName,
-    addTask
+    addTask,
+    updateTask
 
 };

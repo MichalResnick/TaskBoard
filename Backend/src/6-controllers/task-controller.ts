@@ -73,6 +73,19 @@ router.post("/tasks", async (request: Request, response: Response, next: NextFun
     }
 });
 
+router.put("/tasks/:taskId", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+    request.body.taskId=+request.params.taskId
+    const task=new TaskModel(request.body)
+    const updatedTask=await taskLogic.updateTask(task)
+    response.status(201).json(updatedTask)
+    
+    }
+    catch (err: any) {
+        next(err);
+    }
+});
+
 
 
 export default router;
