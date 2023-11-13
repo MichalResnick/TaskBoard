@@ -26,7 +26,7 @@ async function addEmployee(employee:EmployeeModel):Promise<EmployeeModel> {
 async function updateEmployee(employee:EmployeeModel):Promise<EmployeeModel> {
     const sql=`
    UPDATE employees SET 
-   employeeName=?,
+   employeeName=?
    WHERE employeeId=? `
     
     const values=[employee.employeeName,employee.employeeId]

@@ -736,3 +736,103 @@ Stack: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the ma
     at new Promise (<anonymous>)
     at __awaiter (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:4:12)
 ----------------------------------------------------------------------------------------------------
+Mon, 13 Nov 2023 22:40:36 GMT
+cathAll error
+Stack: Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'where clause'
+    at Query.Sequence._packetToError (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    --------------------
+    at Pool.query (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Pool.js:199:23)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:14:20
+    at new Promise (<anonymous>)
+    at Object.execute (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:13:12)
+    at Object.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:68:35)
+    at step (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:33:23)
+    at Object.next (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:14:53)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\task-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------
+Mon, 13 Nov 2023 22:41:49 GMT
+cathAll error
+Stack: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE customerId=5' at line 3
+    at Query.Sequence._packetToError (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    --------------------
+    at Pool.query (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Pool.js:199:23)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:14:20
+    at new Promise (<anonymous>)
+    at Object.execute (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:13:12)
+    at Object.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:34:35)
+    at step (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:33:23)
+    at Object.next (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:14:53)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------
+Mon, 13 Nov 2023 22:41:50 GMT
+cathAll error
+Stack: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE customerId=5' at line 3
+    at Query.Sequence._packetToError (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    --------------------
+    at Pool.query (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Pool.js:199:23)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:14:20
+    at new Promise (<anonymous>)
+    at Object.execute (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:13:12)
+    at Object.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:34:35)
+    at step (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:33:23)
+    at Object.next (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:14:53)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\customers-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------
+Mon, 13 Nov 2023 22:53:24 GMT
+cathAll error
+Stack: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE employeeId=5' at line 3
+    at Query.Sequence._packetToError (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    --------------------
+    at Pool.query (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\node_modules\mysql\lib\Pool.js:199:23)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:14:20
+    at new Promise (<anonymous>)
+    at Object.execute (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\2-utils\dal.ts:13:12)
+    at Object.<anonymous> (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\employees-logic.ts:33:35)
+    at step (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\employees-logic.ts:33:23)
+    at Object.next (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\employees-logic.ts:14:53)
+    at C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\employees-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Owner\Desktop\Studies\Practice after studies\Task Board\Task Board\Backend\src\5-logic\employees-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------

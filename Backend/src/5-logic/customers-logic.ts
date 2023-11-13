@@ -28,9 +28,10 @@ async function updateCustomer(customer:CustomerModel):Promise<CustomerModel> {
     const sql=`
    UPDATE customers SET 
    customerName=?,
+   email=?
    WHERE customerId=? `
     
-    const values=[customer.customerName,customer.customerId]
+    const values=[customer.customerName,customer.email,customer.customerId]
     const info:OkPacket=await dal.execute(sql,values)
     if (info.affectedRows===0) throw new ResourceNotFoundErrorModel(customer.customerId)
 
