@@ -9,15 +9,6 @@ const router = express.Router(); // Capital R
 // GET http://localhost:3001/api/_____
 
 
-router.get("/tasks/customers", async (request: Request, response: Response, next: NextFunction) => {
-    try {
-        const customers=await taskLogic.getAllCustomers()
-        response.json(customers)
-    }
-    catch (err: any) {
-        next(err);
-    }
-});
 router.get("/tasks", async (request: Request, response: Response, next: NextFunction) => {
     try {
         const tasks=await taskLogic.getAllTasks()

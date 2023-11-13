@@ -7,12 +7,6 @@ import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 
 
 
-async function getAllCustomers():Promise<CustomerModel[]>{
-    const sql=`SELECT * FROM customers`
-    const customers=await dal.execute(sql)
-    return customers
-}
-
 async function getAllTasks():Promise<TaskModel[]>{
     const sql=`SELECT * FROM tasks`
     const tasks=await dal.execute(sql)
@@ -91,7 +85,6 @@ async function deleteTask(TaskId:number):Promise<void>{
 
 export default {
     
-    getAllCustomers,
     getAllTasks,
     getAllTasksByEmployeeName,
     getAllTasksByCustomerName,
