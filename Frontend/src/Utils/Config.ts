@@ -3,7 +3,9 @@ class Config {
     public EmployeesUrl = "http://localhost:3001/api/tasks/employees/";
     public CustomersUrl = "http://localhost:3001/api/tasks/customers/";
     public TasksByEmployeeUrl = "http://localhost:3001/api/tasks-by-employee/";
-    public TasksByCustomerUrl = "http://localhost:3001/api/tasks-by-customer/"
+    public TasksByCustomerUrl = "http://localhost:3001/api/tasks-by-customer/";
+    public UpdateStatusUrl = "http://localhost:3001/api/tasks/status/";
+    public UpdatePriorityUrl = "http://localhost:3001/api/tasks/priority/";
 }
 
 const appConfig = new Config(); // Singleton

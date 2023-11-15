@@ -19,6 +19,7 @@ router.get("/tasks", async (request: Request, response: Response, next: NextFunc
     }
 });
 
+//get tasks by employee
 router.get("/tasks-by-employee/:employeeId", async (request: Request, response: Response, next: NextFunction) => {
     try {
        const employeeId=+request.params.employeeId
@@ -32,6 +33,7 @@ router.get("/tasks-by-employee/:employeeId", async (request: Request, response: 
     }
 });
 
+//get tasks by customer
 router.get("/tasks-by-customer/:customerId", async (request: Request, response: Response, next: NextFunction) => {
     try {
        const customerId=+request.params.customerId
@@ -45,6 +47,7 @@ router.get("/tasks-by-customer/:customerId", async (request: Request, response: 
     }
 });
 
+//add task
 router.post("/tasks", async (request: Request, response: Response, next: NextFunction) => {
     try {
     const task=new TaskModel(request.body)
@@ -57,7 +60,31 @@ router.post("/tasks", async (request: Request, response: Response, next: NextFun
     }
 });
 
-router.put("/tasks/:taskId", async (request: Request, response: Response, next: NextFunction) => {
+ //update the task status
+ router.patch("/tasks/status/:taskId([0-9]+)", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+      const taskId = +request.params.taskId
+      const status= await taskLogic.updateTaskStatus(taskId,request.body.status)
+      response.status(201).json(status)
+    } catch (err) {
+      next(err)
+    }
+
+});
+
+ //update the task priority
+ router.patch("/tasks/priority/:taskId([0-9]+)", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+      const taskId = +request.params.taskId
+      const priority= await taskLogic.updateTaskPriority(taskId,request.body.priority)
+      response.status(201).json(priority)
+    } catch (err) {
+      next(err)
+    }
+
+});
+
+router.put("/tasks/:taskId([0-9]+)", async (request: Request, response: Response, next: NextFunction) => {
     try {
     request.body.taskId=+request.params.taskId
     const task=new TaskModel(request.body)

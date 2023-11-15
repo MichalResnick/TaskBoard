@@ -30,6 +30,14 @@ class DataService {
     await axios.post<TaskModel>(appConfig.TasksUrl,task)
  }
 
+ public async  updateTaskStatus(taskId:number,status:string):Promise<void>{
+   await axios.patch(appConfig.UpdateStatusUrl+taskId,status)
+ }
+
+ public async  updateTaskPriority(taskId:number,priority:string):Promise<void>{
+   await axios.patch(appConfig.UpdatePriorityUrl+taskId,priority)
+ }
+
 public async updatetask(task:TaskModel):Promise<void>{
     await axios.put<TaskModel>(appConfig.TasksUrl,task)
  }

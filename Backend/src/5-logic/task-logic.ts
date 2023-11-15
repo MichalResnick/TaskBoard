@@ -10,12 +10,12 @@ import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 async function getAllTasks():Promise<TaskModel[]>{
     const sql=`SELECT 
     tasks.*,
-    employees.employee_name AS employee_name,
-    customers.customer_name AS customer_name,
-    DATE_FORMAT(tasks.date_field, '%Y-%m-%d') AS formatted_date
+    employees.employeeName AS employeeName,
+    customers.customerName AS customerName,
+    DATE_FORMAT(tasks.date, '%Y-%m-%d') AS date
     FROM tasks
-    JOIN employees ON tasks.employee_id = employees.employee_id
-    JOIN customers ON tasks.customer_id = customers.customer_id;`
+    JOIN employees ON tasks.employeeId = employees.employeeId
+    JOIN customers ON tasks.customerId = customers.customerId;`
     const tasks=await dal.execute(sql)
     return tasks
 }
@@ -60,6 +60,23 @@ async function addTask(task:TaskModel):Promise<TaskModel> {
     
 }
 
+async function updateTaskStatus(taskId:number,status:string):Promise<void>{
+    console.log("here1")
+    const sql = `UPDATE tasks SET status = ? WHERE taskId = ?`
+    console.log("here2");
+    const info:OkPacket = await dal.execute(sql ,[status,taskId])
+    console.log("here2")
+    if ( info.affectedRows===0) throw new ResourceNotFoundErrorModel(taskId)
+  
+}
+
+async function updateTaskPriority(taskId:number,priority:string):Promise<void>{
+    const sql = `UPDATE tasks SET priority = ? WHERE taskId = ?`
+    const info:OkPacket = await dal.execute(sql ,[priority,taskId])
+    if ( info.affectedRows===0) throw new ResourceNotFoundErrorModel(taskId)
+   
+}
+
 async function updateTask(task:TaskModel):Promise<TaskModel> {
     const sql=`
    UPDATE tasks SET 
@@ -96,6 +113,8 @@ export default {
     getAllTasksByEmployeeName,
     getAllTasksByCustomerName,
     addTask,
+    updateTaskStatus,
+    updateTaskPriority,
     updateTask,
     deleteTask
 };
