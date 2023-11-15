@@ -8,7 +8,14 @@ import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 
 
 async function getAllTasks():Promise<TaskModel[]>{
-    const sql=`SELECT * FROM tasks`
+    const sql=`SELECT 
+    tasks.*,
+    employees.employee_name AS employee_name,
+    customers.customer_name AS customer_name,
+    DATE_FORMAT(tasks.date_field, '%Y-%m-%d') AS formatted_date
+    FROM tasks
+    JOIN employees ON tasks.employee_id = employees.employee_id
+    JOIN customers ON tasks.customer_id = customers.customer_id;`
     const tasks=await dal.execute(sql)
     return tasks
 }

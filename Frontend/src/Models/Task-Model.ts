@@ -6,6 +6,8 @@ class TaskModel{
     public date:string
     public priority:string
     public employeeId:number
+    public customerName:string
+    public employeeName:string
  }
  
  export default TaskModel
